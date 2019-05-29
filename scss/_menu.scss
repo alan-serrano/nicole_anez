@@ -1,0 +1,47 @@
+/* ------------------ */
+/* Menú principal */
+/* ------------------ */
+
+#main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+
+    .menu-contenedor{
+        display: flex;
+        align-items: center;
+
+    }
+    
+    .logo{
+        width: 100px;
+        height: 100px;
+    }
+
+    ul#top-menu{
+        li{
+            display: inline-block;
+            padding: 15px 25px;
+
+            a{
+                text-decoration: none;
+                color: #524f4f;
+            }
+        }
+    }
+
+    .redes-sociales{
+        margin-left: auto;
+        i{
+            display: inline-block;
+            padding-right: 1em;
+
+            &:last-child{
+                padding-right: 0;
+            }
+        }
+    }
+}
+// main-header
