@@ -4,6 +4,7 @@
 
 #main-header{
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     width: 100%;
@@ -12,6 +13,7 @@
     .menu-contenedor{
         display: flex;
         align-items: center;
+        width: 90vw;  
 
     }
     
@@ -21,9 +23,11 @@
     }
 
     ul#top-menu{
+        margin: 0;
+        padding: 0;
         li{
             display: inline-block;
-            padding: 15px 25px;
+            padding: 15px 1em;
 
             a{
                 text-decoration: none;
