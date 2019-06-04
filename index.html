@@ -10,12 +10,11 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="recursos/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -27,9 +26,10 @@
 
     <header id="main-header">
         <div class="contenedor menu-contenedor">
-            <div class="logo">
-                <img src="img/Logo.png" alt="Juice House">
-            </div>
+            <input type="checkbox" id="menu-bar">
+            <span class="logo">
+                <a href="index.html"><img src="img/Logo.png" alt="Juice House"></a>
+            </span>
             <nav>
 
                 <ul id="top-menu">
@@ -50,6 +50,10 @@
                         <a href="#">COMIDAS/CENAS</a>
                     </li>
 
+                    <li class="postres.html">
+                        <a href="postres.html">POSTRES</a>
+                    </li>
+
                 </ul>
             </nav>
 
@@ -57,6 +61,8 @@
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-instagram"></i>
             </div>
+
+            <label class="icon-menu" for="menu-bar"><i class="fas fa-bars"></i></label>
 
         </div>
         <!-- .contenedor menu-contenedor -->
@@ -119,8 +125,8 @@
                     <span class="precio">9.20</span>
                 </p>
                 <div class="btn">
-                    <a href="desayunos.html" class="btn">VER TODO</a>
-                </div>
+                        <a href="desayunos.html" class="btn">VER TODO</a>
+                    </div>
 
             </div>
             <!-- column-1 -->
@@ -144,8 +150,8 @@
                     <span class="precio">9.20</span>
                 </p>
                 <div class="btn">
-                    <a href="desayunos.html" class="btn">VER TODO</a>
-                </div>
+                        <a href="desayunos.html" class="btn">VER TODO</a>
+                    </div>
             </div>
             <!-- column-2 -->
         </div>
@@ -219,14 +225,14 @@
             </div>
 
             <div class="column">
-                <h3>THE JUICE HOUSE</h3>
-                <p>thejuicehousebcn@gmail.com +34 93 117 1515</p>
+                <h3>VERDE FIT</h3>
+                <p>nicole@verdefit.com +34 93 117 1515</p>
             </div>
 
             <div class="column">
                 <h3>HORARIO</h3>
                 <p>Lunes - Miércoles: 10.00 a 17.00</p>
-                <p>Lunes - Miércoles: 10.00 a 17.00</p>
+                <p>Martes - Sábado: 10.00 a 23.00</p>
                 <p>Lunes - Miércoles: 10.00 a 17.00</p>
             </div>
         </div>
@@ -234,21 +240,12 @@
 
         <div class="row politiva-privacidad">
             <div class="column">
-                <p>Política de Privacidad Cookies © The Juice House 2019</p>
+                <p>Política de Privacidad Cookies © The VERDE FIT 2019</p>
             </div>
         </div>
         <!-- row politiva-privacidad -->
     </footer>
 
-
-
-    <!-- Add your site or application content here -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
-    </script>
-    <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
 </body>

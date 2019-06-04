@@ -1,0 +1,27 @@
+footer{
+    text-align: center;
+    background: #EBEBEB;
+    .row{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media only screen and (min-width: 981px){
+            flex-wrap: nowrap;
+        }
+    
+
+        .column{
+            margin-right: 40px;
+            width: 100%;
+            @media only screen and (min-width: 981px){
+                
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}

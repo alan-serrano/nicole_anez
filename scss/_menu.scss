@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: white;
+    background: rgba(white, 0.7);
 
     .menu-contenedor{
         display: flex;
@@ -20,11 +20,50 @@
     .logo{
         width: 100px;
         height: 100px;
+        background: rgba(black, 0.4);
+        border-radius: 50%;
+    }
+
+    #menu-bar{
+        display: none;
+
+        &:checked ~ nav ul#top-menu{
+            transform: translate(0);
+        }
+    }
+
+    label{
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+
+        @media only screen and (min-width: 981px){
+            display: none;
+        }
     }
 
     ul#top-menu{
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 20px;
+        height: calc(100vh - 80px);
+        background: rgba(white, 0.7);
+        transform: translate(100%);
+        transition: transform 0.5s linear;
+
+        @media only screen and (min-width: 981px){
+            transform: translate(0);
+            position: static;
+            display: block;
+            background: none;
+            height: auto;
+        }
+
         li{
             display: inline-block;
             padding: 15px 1em;

@@ -3,31 +3,28 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Nosotros</title>
+    <title>Desayunos</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="recursos/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
 
     <meta name="theme-color" content="#fafafa">
 </head>
 
-<body class="page page-comidas">
+<body class="page page-desayunos">
     <header id="main-header">
         <div class="contenedor menu-contenedor">
-            <div class="logo">
-                <img src="img/Logo.png" alt="Juice House">
-            </div>
+            <input type="checkbox" id="menu-bar">
+            <span class="logo">
+                <a href="index.html"><img src="img/Logo.png" alt="Juice House"></a>
+            </span>
             <nav>
 
                 <ul id="top-menu">
+
                     <li class="menu-item">
                         <a href="index.html">HOME</a>
                     </li>
@@ -40,8 +37,12 @@
                         <a href="desayunos.html">DESAYUNOS/MERIENDAS</a>
                     </li>
 
-                    <li class="menu-item">
+                    <li class="comidas.html">
                         <a href="comidas.html">COMIDAS/CENAS</a>
+                    </li>
+
+                    <li class="postres.html">
+                        <a href="postres.html">POSTRES</a>
                     </li>
 
                 </ul>
@@ -52,21 +53,148 @@
                 <i class="fab fa-instagram"></i>
             </div>
 
+            <label class="icon-menu" for="menu-bar"><i class="fas fa-bars"></i></label>
+
         </div>
         <!-- .contenedor menu-contenedor -->
     </header>
 
+    <section class="hero comida">
+        <div class="row">
+            <div class="column">
+                <div class="img-contenedor">
+                    <img src="img/logo-portada.png" alt="">
+                </div>
+                <h1>COMIDAS Y CENAS</h1>
+            </div>
+            <!-- column -->
+        </div>
+        <!-- row -->
+    </section>
+    <!-- .portada -->
+
+    <section class="menu">
+        <div class="row">
+            <div class="column">
+                <h2>Desayunos Deliciosos</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum ad, natus quae eius et ipsa similique
+                    accusamus blanditiis voluptatibus quam. Necessitatibus consequuntur dolore quasi quaerat pariatur
+                    harum
+                    ea ex consectetur!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="comida-info">
+
+        <div class="row">
+
+            <div class="column col-md-6">
+                <p>
+                    <span class="descripcion">SICILIAN MEATBALLS</span>
+                    <span class="precio">9.20</span>
+                </p>
+                <p>
+                    <span class="descripcion">SEAFOOD SALAD</span>
+                    <span class="precio">9.20</span>
+                </p>
+                <p>
+                    <span class="descripcion">ROAST CHICKEN</span>
+                    <span class="precio">9.20</span>
+                </p>
+                <p>
+                    <span class="descripcion">GRILLED FISH</span>
+                    <span class="precio">9.20</span>
+                </p>
+
+            </div>
+            <!-- column-1 -->
+
+            <div class="column col-md-6">
+                <p>
+                    <span class="descripcion">MUSSELS SOUP</span>
+                    <span class="precio">9.20</span>
+                </p>
+                <p>
+                    <span class="descripcion">ITALIAN SPAGHETTI</span>
+                    <span class="precio">9.20</span>
+                </p>
+                <p>
+                    <span class="descripcion">BEEF BURGER</span>
+                    <span class="precio">9.20</span>
+                </p>
+                <p>
+                    <span class="descripcion">STUFFED STRAWBERRY</span>
+                    <span class="precio">9.20</span>
+                </p>
+            </div>
+            <!-- column-2 -->
+        </div>
+        <!-- row grid -->
+    </section>
+    <!-- .comida-info -->
+
+    <section class="parallax fondo-4">
+
+    </section>
+
+    <section class="mejor-oferta">
+        <div class="row">
+            <div class="column">
+                <h2>Nuestra Mejor Oferta</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, molestiae. Ullam veniam explicabo
+                    maiores deserunt adipisci eaque repellendus! Ducimus nihil delectus quaerat deserunt nulla facere
+                    quae aspernatur, minima deleniti vero.</p>
+            </div>
+
+            <div class="column">
+                <div class="img-contenedor">
+                    <img src="img/oferta almuerzo.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer">
+            <div class="row">
+                <div class="column">
+                    <div class="logo-container">
+                        <img src="" alt="" class="logo">
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+    
+            <div class="row">
+    
+                <div class="column">
+                    <h3>DÓNDE ESTAMOS</h3>
+                    <p>Carrer del Parlament 12, Barcelona 08015</p>
+                </div>
+    
+                <div class="column">
+                    <h3>VERDE FIT</h3>
+                    <p>nicole@verdefit.com +34 93 117 1515</p>
+                </div>
+    
+                <div class="column">
+                    <h3>HORARIO</h3>
+                    <p>Lunes - Miércoles: 10.00 a 17.00</p>
+                    <p>Martes - Sábado: 10.00 a 23.00</p>
+                    <p>Lunes - Miércoles: 10.00 a 17.00</p>
+                </div>
+            </div>
+            <!-- row -->
+    
+            <div class="row politiva-privacidad">
+                <div class="column">
+                    <p>Política de Privacidad Cookies © The VERDE FIT 2019</p>
+                </div>
+            </div>
+            <!-- row politiva-privacidad -->
+        </footer>
 
 
-
-
-    <!-- Add your site or application content here -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
-    </script>
-    <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </body>
 

@@ -30,6 +30,27 @@
 /* --------------------------- */
 section.info{
     height: calc(100vh - 100px);
+    h2{
+        font-size: 36px;
+
+        .fw-normal{
+            font-weight: normal;
+        }
+    }
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .column {
+            margin-right: 40px;
+            width: calc(50% - 40px);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 .fondo-1{
@@ -44,8 +65,23 @@ section.info{
 /* --------------------------------- */
 
 section.comida-info{
-    
+    .row{
+        display: flex;
+    }
     .column{
+        width: 100%;
+        padding-right: 20px;
+
+
+        @media only screen and (min-width: 768px){
+            width: 50%;
+            padding-right: 40px;
+        }
+
+
+        &:last-child{
+            padding-right: 0;
+        }
         
         p{
             position: relative;
@@ -87,5 +123,34 @@ section.comida-info{
                 }
             }
         }
+    }
+}
+
+section.contacto{
+    height: 400px;
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .column{
+            margin-right: 40px;
+            width: 50%;
+            text-align: center;
+            &:first-child{
+                border-right: 1px solid #272727;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+section.ubicacion{
+    p{
+        text-align: center;
     }
 }

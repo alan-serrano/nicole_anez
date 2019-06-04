@@ -1,5 +1,37 @@
 @charset "UTF-8";
+/* raleway-regular - latin */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/raleway-v13-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Raleway"), local("Raleway-Regular"), url("../fonts/raleway-v13-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-v13-latin-regular.woff2") format("woff2"), url("../fonts/raleway-v13-latin-regular.woff") format("woff"), url("../fonts/raleway-v13-latin-regular.ttf") format("truetype"), url("../fonts/raleway-v13-latin-regular.svg#Raleway") format("svg");
+  /* Legacy iOS */
+}
+/* raleway-800 - latin */
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/raleway-v13-latin-800.eot");
+  /* IE9 Compat Modes */
+  src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url("../fonts/raleway-v13-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-v13-latin-800.woff2") format("woff2"), url("../fonts/raleway-v13-latin-800.woff") format("woff"), url("../fonts/raleway-v13-latin-800.ttf") format("truetype"), url("../fonts/raleway-v13-latin-800.svg#Raleway") format("svg");
+  /* Legacy iOS */
+}
 /* Generales */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 .contenedor,
 .row {
   max-width: 1170px;
@@ -31,9 +63,15 @@ img {
 /* Tipografía */
 body {
   color: #524f4f;
+  line-height: 1.5;
+  font-family: "Raleway";
 }
 
 /* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+}
+
 h1,
 h2,
 h3 {
@@ -53,6 +91,10 @@ h3 {
   font-size: 24px;
 }
 
+section {
+  overflow: hidden;
+}
+
 /* ------------------ */
 /* Menú principal */
 /* ------------------ */
@@ -62,7 +104,7 @@ h3 {
   top: 0;
   left: 0;
   width: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
 }
 #main-header .menu-contenedor {
   display: flex;
@@ -72,10 +114,47 @@ h3 {
 #main-header .logo {
   width: 100px;
   height: 100px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+#main-header #menu-bar {
+  display: none;
+}
+#main-header #menu-bar:checked ~ nav ul#top-menu {
+  transform: translate(0);
+}
+#main-header label {
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+}
+@media only screen and (min-width: 981px) {
+  #main-header label {
+    display: none;
+  }
 }
 #main-header ul#top-menu {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding: 20px;
+  height: calc(100vh - 80px);
+  background: rgba(255, 255, 255, 0.7);
+  transform: translate(100%);
+  transition: transform 0.5s linear;
+}
+@media only screen and (min-width: 981px) {
+  #main-header ul#top-menu {
+    transform: translate(0);
+    position: static;
+    display: block;
+    background: none;
+    height: auto;
+  }
 }
 #main-header ul#top-menu li {
   display: inline-block;
@@ -136,6 +215,24 @@ h3 {
 section.info {
   height: calc(100vh - 100px);
 }
+section.info h2 {
+  font-size: 36px;
+}
+section.info h2 .fw-normal {
+  font-weight: normal;
+}
+section.info .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.info .row .column {
+  margin-right: 40px;
+  width: calc(50% - 40px);
+}
+section.info .row .column:last-child {
+  margin-right: 0;
+}
 
 .fondo-1 {
   background-image: url("../img/fondo-1.png");
@@ -148,6 +245,22 @@ section.info {
 /* --------------------------------- */
 /* Sección de información de comida */
 /* --------------------------------- */
+section.comida-info .row {
+  display: flex;
+}
+section.comida-info .column {
+  width: 100%;
+  padding-right: 20px;
+}
+@media only screen and (min-width: 768px) {
+  section.comida-info .column {
+    width: 50%;
+    padding-right: 40px;
+  }
+}
+section.comida-info .column:last-child {
+  padding-right: 0;
+}
 section.comida-info .column p {
   position: relative;
   margin: 25px 0;
@@ -180,6 +293,275 @@ section.comida-info .column p span.precio {
 }
 section.comida-info .column p span.precio::after {
   content: " Bs";
+}
+
+section.contacto {
+  height: 400px;
+}
+section.contacto .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section.contacto .row .column {
+  margin-right: 40px;
+  width: 50%;
+  text-align: center;
+}
+section.contacto .row .column:first-child {
+  border-right: 1px solid #272727;
+}
+section.contacto .row .column:last-child {
+  margin-right: 0;
+}
+
+section.ubicacion p {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  background: #EBEBEB;
+}
+footer .row {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 981px) {
+  footer .row {
+    flex-wrap: nowrap;
+  }
+}
+footer .row .column {
+  margin-right: 40px;
+  width: 100%;
+}
+footer .row .column:last-child {
+  margin-right: 0;
+}
+
+/* ---------------- */
+/* Página acerca de */
+/* ---------------- */
+/* Sección hero */
+h2 {
+  font-size: 48px;
+  text-align: center;
+}
+
+section.hero.nosotros {
+  padding-top: 100px;
+  height: 100vh;
+  background: url("../img/acerca-de.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.hero.nosotros .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.hero.nosotros h1 {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
+section.hero.nosotros .img-contenedor {
+  width: 300px;
+  height: 300px;
+}
+
+/* Sección Nuestra Historia */
+section.nuestra-historia .row {
+  width: 90vw;
+  max-width: 800px;
+}
+
+/* Sección nuestra chef */
+section.nuestra-chef .row {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: none;
+  padding: 0;
+}
+@media only screen and (min-width: 981px) {
+  section.nuestra-chef .row {
+    flex-direction: row;
+  }
+}
+section.nuestra-chef .row .column {
+  padding: 40px;
+  width: 100vw;
+  max-width: 100%;
+}
+@media only screen and (min-width: 981px) {
+  section.nuestra-chef .row .column {
+    width: 50vw;
+  }
+}
+section.nuestra-chef .row .column:nth-child(1) {
+  background-image: url("../img/chef.jpg");
+  background-size: cover;
+  height: 50vh;
+}
+@media only screen and (min-width: 981px) {
+  section.nuestra-chef .row .column:nth-child(1) {
+    height: auto;
+  }
+}
+section.nuestra-chef .row .column:nth-child(2) {
+  background: #EBEBEB;
+}
+
+/* Sección Nuestra Especialidad */
+section.nuestra-especialidad .row:first-child {
+  padding-bottom: 0;
+}
+section.nuestra-especialidad .row.especialidad {
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+section.nuestra-especialidad .row.especialidad .column {
+  text-align: center;
+}
+section.nuestra-especialidad .row.especialidad .column h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+section.nuestra-especialidad .row.especialidad .column h3:hover {
+  border-bottom: 1px solid #272727;
+}
+section.nuestra-especialidad .row.especialidad .column h3:hover ~ p {
+  opacity: 0;
+}
+section.nuestra-especialidad .row.especialidad .column h3.desayuno:hover ~ #desayuno {
+  opacity: 1;
+}
+section.nuestra-especialidad .row.especialidad .column h3.comida:hover ~ #comida {
+  opacity: 1;
+}
+section.nuestra-especialidad .row.especialidad .column h3.postre:hover ~ #postre {
+  opacity: 1;
+}
+section.nuestra-especialidad .row.especialidad .column:nth-child(1) {
+  width: 100%;
+}
+@media only screen and (min-width: 981px) {
+  section.nuestra-especialidad .row.especialidad .column:nth-child(1) {
+    width: 40%;
+  }
+}
+section.nuestra-especialidad .row.especialidad .column:nth-child(2) {
+  width: 100%;
+}
+@media only screen and (min-width: 981px) {
+  section.nuestra-especialidad .row.especialidad .column:nth-child(2) {
+    width: 60%;
+  }
+}
+
+/* Estilos Comunes para páginas de menú de comida */
+/* hero desayuno */
+section.hero {
+  padding-top: 100px;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.hero .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.hero h1 {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
+section.hero .img-contenedor {
+  width: 300px;
+  height: 300px;
+}
+section.hero.desayuno {
+  background-image: url("../img/portada-desayuno.jpg");
+}
+section.hero.comida {
+  background-image: url("../img/portada almuerzo.jpg");
+}
+section.hero.postre {
+  background-image: url("../img/portada postres.jpg");
+}
+
+/* Sección título de menú */
+section.menu .row {
+  max-width: 600px;
+}
+
+.fondo-3 {
+  background-image: url("../img/portada-desayuno.jpg");
+}
+
+.fondo-4 {
+  background-image: url("../img/portada almuerzo.jpg");
+}
+
+.fondo-5 {
+  background-image: url("../img/portada postres.jpg");
+}
+
+/* Sección Oferta */
+section.mejor-oferta .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (min-width: 981px) {
+  section.mejor-oferta .row {
+    flex-wrap: nowrap;
+  }
+}
+section.mejor-oferta .row .column:nth-child(1) {
+  width: 100%;
+}
+@media only screen and (min-width: 981px) {
+  section.mejor-oferta .row .column:nth-child(1) {
+    width: 60%;
+  }
+}
+section.mejor-oferta .row .column:nth-child(2) {
+  width: 100%;
+}
+@media only screen and (min-width: 981px) {
+  section.mejor-oferta .row .column:nth-child(2) {
+    width: 40%;
+  }
+}
+section.mejor-oferta .row .img-contenedor {
+  width: 100%;
+  height: 100%;
+  max-height: 70vh;
 }
 
 /* Botón */

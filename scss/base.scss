@@ -1,5 +1,15 @@
+@import "fonts";
 /* Generales */
-
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+    }
 
 
 .contenedor,
@@ -35,9 +45,14 @@ img {
 /* Tipografía */
 body {
     color: #524f4f;
+    line-height: 1.5;
+    font-family: 'Raleway';
 }
 
 /* Encabezados */
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Playfair Display', serif;
+}
 
 h1,
 h2,
@@ -58,10 +73,16 @@ h3 {
     font-size: 24px;
 }
 
+section{
+    overflow: hidden;
+}
+
 @import "menu";
 @import "page";
 @import "page-inicio";
-
+@import "footer";
+@import "page-acerca-de";
+@import "page-comidas";
 /* Botón */
 div.btn{
     text-align: center;
