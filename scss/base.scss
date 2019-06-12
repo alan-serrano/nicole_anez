@@ -47,6 +47,10 @@ body {
     color: #524f4f;
     line-height: 1.5;
     font-family: 'Raleway';
+
+    a{
+        color: #524f4f;
+    }
 }
 
 /* Encabezados */
@@ -83,6 +87,7 @@ section{
 @import "footer";
 @import "page-acerca-de";
 @import "page-comidas";
+@import "page-contacto";
 /* Botón */
 div.btn{
     text-align: center;

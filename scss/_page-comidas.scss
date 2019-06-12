@@ -44,6 +44,7 @@ section.hero {
 }
 /* Sección título de menú */
 section.menu{
+    text-align: center;
     .row{
         max-width: 600px;
     }
@@ -95,6 +96,18 @@ section.mejor-oferta{
             width: 100%;
             height: 100%;
             max-height: 70vh;
+
+            /* para evitar que se desborde la imagen */
+            overflow: hidden;
+            
+            img{
+                transition: transform .5s linear;
+                
+                &:hover{
+                    transform: scale(1.1);
+                }
+                
+            }
         }
     }
 }

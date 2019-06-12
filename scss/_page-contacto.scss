@@ -1,0 +1,107 @@
+/* pagina inicio */
+.page-contacto section.hero {
+    height: auto;
+    min-height: 100vh;
+    background: url("../img/chef.jpg");
+    background-position: left center;
+    background-size: cover;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    .row {
+        background: rgba(white, 0.8);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+
+        @media only screen and (min-width: 968px){
+            flex-wrap: nowrap;
+        }
+
+
+        .columna {
+
+            width: 100%;
+            padding-right: 40px;
+
+             @media only screen and (min-width: 968px){
+                 width: 50%;
+             }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            /* mover texto a la derecha */
+            .derecha {
+                text-align: right;
+            }
+
+            /* color y tamaño a todas las propiedas con .tipo-uno */
+            .tipo-uno {
+                color: #626262;
+                font-size: 22px;
+                font-weight: lighter;
+            }
+
+            /* h1 */
+            h1.tipo-uno {
+                font-weight: normal;
+            }
+
+            /* parrafos */
+            p.tipo-uno {
+                margin-bottom: 0;
+            }
+
+            p.tipo-dos {
+                margin-top: 0;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            p{
+                color: #524f4f;
+                font-weight: normal;
+                font-size: 19px;
+            }
+        }
+    }
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                > *{
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 1em;
+                    background: #626262;
+                    border: 0;
+                    color: white;
+                    &::placeholder{
+                        color:white;
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+                        padding: 0;
+                        background: none;
+                    }
+                }
+                div.btn{
+                    text-align: right;
+                    button{
+                        background: #626262;
+                        border: 0;
+                        color: white;
+                        padding: 0.60em;
+                        padding-right:2em;
+                        padding-left: 2em;
+                    }
+                }
+            }
+
+}

@@ -53,7 +53,7 @@ section.nuestra-historia {
 
 /* Sección nuestra chef */
 section.nuestra-chef {
-    
+
     // overflow: hidden;
 
     .row {
@@ -61,7 +61,7 @@ section.nuestra-chef {
         display: flex;
         flex-direction: column;
         justify-content: center;
-       
+
         max-width: none;
         padding: 0;
 
@@ -73,7 +73,10 @@ section.nuestra-chef {
             padding: 40px;
             width: 100vw;
             max-width: 100%;
+            transition: transform .5s linear;
             
+           
+
 
             @media only screen and (min-width: 981px) {
                 width: 50vw;
@@ -84,19 +87,72 @@ section.nuestra-chef {
                 background-image: url("../img/chef.jpg");
                 background-size: cover;
                 height: 50vh;
+                padding: 0;
+                
 
                 @media only screen and (min-width: 981px) {
                     height: auto;
                 }
+
+                &:hover{
+                    transform: scale(1.5);
+                }
+
+                a {
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                }
+
 
 
             }
 
             &:nth-child(2) {
                 background: #EBEBEB;
+                /* Para evitar que la imagen se desborde */
+                z-index: 1;
 
             }
         }
+    }
+}
+
+#modal {
+    display: none;
+    background: rgba(black, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: right;
+    z-index: 99;
+
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .column{
+        max-width: 750px;
+    }
+
+    .img-contenedor{
+        max-height: 70vh;
+        
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 36px;
+        color: white;
+    }
+
+    &:target {
+        display: block;
     }
 }
 
@@ -144,23 +200,31 @@ section.nuestra-especialidad {
                         opacity: 1;
                     }
 
-                    &.postre:hover~#postre {
-                        opacity: 1;
-                    }
                 }
 
                 &:nth-child(1) {
                     width: 100%;
 
-                    @media only screen and (min-width: 981px){
+                    @media only screen and (min-width: 981px) {
                         width: 40%;
                     }
                 }
 
                 &:nth-child(2) {
                     width: 100%;
-                    @media only screen and (min-width: 981px){
+
+                    @media only screen and (min-width: 981px) {
                         width: 60%;
+                    }
+                }
+            }//.column
+
+            .img-contenedor{
+                
+                img{
+                    transition: transform .5s linear;
+                    &:hover{
+                        transform: scale(1.1);
                     }
                 }
             }

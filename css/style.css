@@ -66,6 +66,9 @@ body {
   line-height: 1.5;
   font-family: "Raleway";
 }
+body a {
+  color: #524f4f;
+}
 
 /* Encabezados */
 h1, h2, h3, h4, h5, h6 {
@@ -167,12 +170,14 @@ section {
 #main-header .redes-sociales {
   margin-left: auto;
 }
-#main-header .redes-sociales i {
-  display: inline-block;
+#main-header .redes-sociales a {
   padding-right: 1em;
 }
-#main-header .redes-sociales i:last-child {
+#main-header .redes-sociales a:last-child {
   padding-right: 0;
+}
+#main-header .redes-sociales i {
+  display: inline-block;
 }
 
 /* Sección Portada */
@@ -184,20 +189,37 @@ section {
 }
 
 .page-inicio section.portada {
-  padding-top: 100px;
   height: 100vh;
-  background: url("../img/portada.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.page-inicio section.portada .slider {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  width: 400vw;
+  height: 100%;
+  animation: carrusel 20s infinite;
 }
 .page-inicio section.portada .row {
+  max-width: none;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.page-inicio section.portada .row:nth-child(1) {
+  background: url("../img/portada.png");
+}
+.page-inicio section.portada .row:nth-child(2) {
+  background: url("../img/portada almuerzo.jpg");
+}
+.page-inicio section.portada .row:nth-child(3) {
+  background: url("../img/portada-desayuno.jpg");
+}
+.page-inicio section.portada .row:nth-child(4) {
+  background: url("../img/portada.png");
 }
 .page-inicio section.portada h1 {
   font-size: 16px;
@@ -209,6 +231,20 @@ section {
   height: 300px;
 }
 
+@keyframes carrusel {
+  0% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(-100vw);
+  }
+  66% {
+    transform: translate(-200vw);
+  }
+  100% {
+    transform: translate(-300vw);
+  }
+}
 /* --------------------------- */
 /* Sección de información de restaurante */
 /* --------------------------- */
@@ -223,12 +259,23 @@ section.info h2 .fw-normal {
 }
 section.info .row {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+@media only screen and (min-width: 981px) {
+  section.info .row {
+    flex-direction: row;
+  }
+}
 section.info .row .column {
-  margin-right: 40px;
-  width: calc(50% - 40px);
+  max-width: 500px;
+}
+@media only screen and (min-width: 981px) {
+  section.info .row .column {
+    margin-right: 40px;
+    width: calc(50% - 40px);
+  }
 }
 section.info .row .column:last-child {
   margin-right: 0;
@@ -247,12 +294,18 @@ section.info .row .column:last-child {
 /* --------------------------------- */
 section.comida-info .row {
   display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 981px) {
+  section.comida-info .row {
+    flex-direction: row;
+  }
 }
 section.comida-info .column {
   width: 100%;
   padding-right: 20px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 981px) {
   section.comida-info .column {
     width: 50%;
     padding-right: 40px;
@@ -261,13 +314,13 @@ section.comida-info .column {
 section.comida-info .column:last-child {
   padding-right: 0;
 }
-section.comida-info .column p {
+section.comida-info p:not(.contiene) {
   position: relative;
   margin: 25px 0;
   display: flex;
   flex-wrap: wrap;
 }
-section.comida-info .column p::before {
+section.comida-info p:not(.contiene)::before {
   content: "";
   position: absolute;
   bottom: 0.3em;
@@ -277,13 +330,17 @@ section.comida-info .column p::before {
   z-index: -1;
   width: 100%;
 }
-section.comida-info .column p span.descripcion {
+section.comida-info p:not(.contiene) span.descripcion {
   background: white;
   display: inline-block;
   z-index: 2;
   padding-right: 0.2rem;
 }
-section.comida-info .column p span.precio {
+body:not(.page-inicio) section.comida-info p:not(.contiene) span.descripcion {
+  /* Para la sección de inicio no debe tener ese color */
+  color: #c85f49;
+}
+section.comida-info p:not(.contiene) span.precio {
   margin-left: auto;
   display: inline-block;
   background: white;
@@ -291,8 +348,13 @@ section.comida-info .column p span.precio {
   z-index: 2;
   color: #c85f49;
 }
-section.comida-info .column p span.precio::after {
-  content: " Bs";
+section.comida-info p:not(.contiene) span.precio::after {
+  content: " $us";
+}
+section.comida-info p.contiene {
+  margin-top: -20px;
+  margin-bottom: 25px;
+  text-align: right;
 }
 
 section.contacto {
@@ -318,6 +380,15 @@ section.contacto .row .column:last-child {
 
 section.ubicacion p {
   text-align: center;
+}
+
+section.encuentranos .row {
+  padding-top: 0;
+}
+section.encuentranos .column {
+  background: url("../img/mapa.png");
+  min-height: 50vh;
+  background-position: center center;
 }
 
 footer {
@@ -403,6 +474,7 @@ section.nuestra-chef .row .column {
   padding: 40px;
   width: 100vw;
   max-width: 100%;
+  transition: transform 0.5s linear;
 }
 @media only screen and (min-width: 981px) {
   section.nuestra-chef .row .column {
@@ -413,14 +485,57 @@ section.nuestra-chef .row .column:nth-child(1) {
   background-image: url("../img/chef.jpg");
   background-size: cover;
   height: 50vh;
+  padding: 0;
 }
 @media only screen and (min-width: 981px) {
   section.nuestra-chef .row .column:nth-child(1) {
     height: auto;
   }
 }
+section.nuestra-chef .row .column:nth-child(1):hover {
+  transform: scale(1.5);
+}
+section.nuestra-chef .row .column:nth-child(1) a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 section.nuestra-chef .row .column:nth-child(2) {
   background: #EBEBEB;
+  /* Para evitar que la imagen se desborde */
+  z-index: 1;
+}
+
+#modal {
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: right;
+  z-index: 99;
+}
+#modal .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#modal .column {
+  max-width: 750px;
+}
+#modal .img-contenedor {
+  max-height: 70vh;
+}
+#modal a {
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+}
+#modal:target {
+  display: block;
 }
 
 /* Sección Nuestra Especialidad */
@@ -458,9 +573,6 @@ section.nuestra-especialidad .row.especialidad .column h3.desayuno:hover ~ #desa
 section.nuestra-especialidad .row.especialidad .column h3.comida:hover ~ #comida {
   opacity: 1;
 }
-section.nuestra-especialidad .row.especialidad .column h3.postre:hover ~ #postre {
-  opacity: 1;
-}
 section.nuestra-especialidad .row.especialidad .column:nth-child(1) {
   width: 100%;
 }
@@ -476,6 +588,12 @@ section.nuestra-especialidad .row.especialidad .column:nth-child(2) {
   section.nuestra-especialidad .row.especialidad .column:nth-child(2) {
     width: 60%;
   }
+}
+section.nuestra-especialidad .row.especialidad .img-contenedor img {
+  transition: transform 0.5s linear;
+}
+section.nuestra-especialidad .row.especialidad .img-contenedor img:hover {
+  transform: scale(1.1);
 }
 
 /* Estilos Comunes para páginas de menú de comida */
@@ -516,6 +634,9 @@ section.hero.postre {
 }
 
 /* Sección título de menú */
+section.menu {
+  text-align: center;
+}
 section.menu .row {
   max-width: 600px;
 }
@@ -562,6 +683,112 @@ section.mejor-oferta .row .img-contenedor {
   width: 100%;
   height: 100%;
   max-height: 70vh;
+  /* para evitar que se desborde la imagen */
+  overflow: hidden;
+}
+section.mejor-oferta .row .img-contenedor img {
+  transition: transform 0.5s linear;
+}
+section.mejor-oferta .row .img-contenedor img:hover {
+  transform: scale(1.1);
+}
+
+/* pagina inicio */
+.page-contacto section.hero {
+  height: auto;
+  min-height: 100vh;
+  background: url("../img/chef.jpg");
+  background-position: left center;
+  background-size: cover;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-contacto section.hero .row {
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+}
+@media only screen and (min-width: 968px) {
+  .page-contacto section.hero .row {
+    flex-wrap: nowrap;
+  }
+}
+.page-contacto section.hero .row .columna {
+  width: 100%;
+  padding-right: 40px;
+  /* mover texto a la derecha */
+  /* color y tamaño a todas las propiedas con .tipo-uno */
+  /* h1 */
+  /* parrafos */
+}
+@media only screen and (min-width: 968px) {
+  .page-contacto section.hero .row .columna {
+    width: 50%;
+  }
+}
+.page-contacto section.hero .row .columna:last-child {
+  padding-right: 0;
+}
+.page-contacto section.hero .row .columna .derecha {
+  text-align: right;
+}
+.page-contacto section.hero .row .columna .tipo-uno {
+  color: #626262;
+  font-size: 22px;
+  font-weight: lighter;
+}
+.page-contacto section.hero .row .columna h1.tipo-uno {
+  font-weight: normal;
+}
+.page-contacto section.hero .row .columna p.tipo-uno {
+  margin-bottom: 0;
+}
+.page-contacto section.hero .row .columna p.tipo-dos {
+  margin-top: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.page-contacto section.hero .row .columna p {
+  color: #524f4f;
+  font-weight: normal;
+  font-size: 19px;
+}
+.page-contacto section.hero form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.page-contacto section.hero form > * {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 1em;
+  background: #626262;
+  border: 0;
+  color: white;
+}
+.page-contacto section.hero form > *::placeholder {
+  color: white;
+}
+.page-contacto section.hero form > *:last-child {
+  margin-bottom: 0;
+  padding: 0;
+  background: none;
+}
+.page-contacto section.hero form div.btn {
+  text-align: right;
+}
+.page-contacto section.hero form div.btn button {
+  background: #626262;
+  border: 0;
+  color: white;
+  padding: 0.6em;
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 /* Botón */

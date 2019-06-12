@@ -77,13 +77,15 @@
 
     .redes-sociales{
         margin-left: auto;
-        i{
-            display: inline-block;
+        a{
             padding-right: 1em;
 
             &:last-child{
                 padding-right: 0;
             }
+        }
+        i{
+            display: inline-block;
         }
     }
 }
